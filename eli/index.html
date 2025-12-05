@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>LeBron James — You Won't Believe It!</title>
+	<style>
+		:root{--accent:#ffcc00;--bg:#0b0b0f}
+		html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#06060a 0%, #0f0f14 100%);color:#fff;display:flex;align-items:center;justify-content:center}
+		.meme-card{width:min(880px,94%);background:#0f1720;border-radius:12px;box-shadow:0 10px 40px rgba(2,6,23,.7);overflow:hidden;text-align:center;padding-bottom:28px}
+		.hero{position:relative}
+		.meme-img{width:100%;height:420px;object-fit:cover;display:block;filter:contrast(1.05) saturate(1.1)}
+		.headline{font-size:clamp(20px,4vw,40px);font-weight:800;letter-spacing:1px;padding:18px 20px;margin:0;background:linear-gradient(90deg,rgba(0,0,0,.2),transparent);}
+		.headline .highlight{color:var(--accent);text-transform:uppercase}
+		.controls{margin-top:14px}
+		.cta{background:var(--accent);border:none;color:#0b0b0f;padding:12px 20px;font-weight:700;border-radius:8px;cursor:pointer;box-shadow:0 8px 20px rgba(255,204,0,.12);transition:transform .18s ease,box-shadow .18s}
+		.cta:active{transform:translateY(1px)}
+		.reveal{max-width:760px;margin:18px auto 0;padding:14px 18px;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.02));color:#e6f6ff;display:none;font-weight:600}
+		.reveal.visible{display:block;animation:revealAnim .45s ease both}
+		@keyframes revealAnim{from{opacity:0;transform:translateY(6px) scale(.995)}to{opacity:1;transform:none}}
+		.headline.popped{transform:scale(1.03);transition:transform .12s ease}
+		.credit{font-size:12px;opacity:.6;margin-top:10px}
+		.attribution{font-size:11px;opacity:.6;margin-top:8px}
+	</style>
+</head>
+<body>
+	<main class="meme-card" role="main">
+		<div class="hero">
+			<img class="meme-img" src="https://upload.wikimedia.org/wikipedia/commons/2/24/LeBron_James_2022.jpg" alt="LeBron James" loading="lazy">
+		</div>
+
+		<h1 class="headline">You won't <span class="highlight">BELIEVE</span> what LeBron did LAST NIGHT!</h1>
+
+		<div class="controls">
+			<button id="revealBtn" class="cta">Click to Reveal</button>
+			<div class="credit">Click the button for the full shocking reveal — meme mode enabled.</div>
+		</div>
+
+		<div id="reveal" class="reveal" aria-live="polite"></div>
+
+		<div class="attribution">Image: Wikimedia Commons — public figure photo.</div>
+	</main>
+
+	<!-- Existing project script (keeps original behavior) -->
+	<script src="index.js"></script>
+	<!-- Meme interactivity -->
+	<script src="meme.js"></script>
+</body>
+</html>
